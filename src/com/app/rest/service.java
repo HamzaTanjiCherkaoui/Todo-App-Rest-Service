@@ -9,75 +9,97 @@ import javax.ws.rs.core.MediaType;
 
 
 
-import com.app.model.Todo;
-@Path("/todos")
+
+
+
+
+import com.app.model.MissingPerson;
+import com.app.model.MissingPerson;
+import com.app.model.Photo;
+import com.app.model.Place;
+import com.app.model.User;
+@Path("/missingpeoples")
 public class service {
 	static final String api_version = "1.01A rev.18729";
 	
 	static String xmlString = null;
-	static Map<Integer, Todo> todos = new HashMap<Integer, Todo>();
+	static Map<Integer, MissingPerson> MissingPersons  = new HashMap<Integer, MissingPerson>();
 	
 	static {
 		System.out.println("Initializing Internal DataStore/DB...");
+		
 		//DB transactions
-		todos.put(12, new Todo(12,"tache 1",false));
-		todos.put(22, new Todo(22,"tache 2",false));
-		todos.put(24, new Todo(24,"tache 2",true));
-		todos.put(33, new Todo(33,"tache 3",false));
-		todos.put(21, new Todo(21,"tache 4",true));
+		Place p = new Place(24112.2, 24112.2, "address", "2015/21/12 05:34:32");
+		Place p2 = new Place(11122.2, 16412.2, "address", "2015/21/12 05:34:32");
+		Place p3 = new Place(11512.2, 247512.2, "address", "2015/21/12 05:34:32");
+		
+		ArrayList<Place> places = new ArrayList<Place>();
+		places.add(p);places.add(p2);places.add(p3);
+		
+		Photo ph = new Photo("image1");
+		Photo ph1 = new Photo("image2");
+		Photo ph2 = new Photo("image4");
+		
+		ArrayList<Photo> photos = new ArrayList<Photo>();
+		photos.add(ph);photos.add(ph2);photos.add(ph1);
+		
+		User u =new User("Test", "test","email@test.com", "123456","069292929");
+		MissingPerson ms = new MissingPerson("benaich", "hentai", photos, places, false, u);
+		
+		MissingPersons.put(1, ms);
+		MissingPersons.put(2, ms);
+		MissingPersons.put(3, ms);
+		
+		
 	}
 	
-	//get all todos
+	//get all MissingPersons
 	@GET
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	public ArrayList<Todo> getAllTodos() {
+	public ArrayList<MissingPerson> getAllMissingPersons() {
 		System.out.println("Getting all tasks...");
-		ArrayList<Todo> todoList = new ArrayList<Todo>(todos.values());
-		return todoList;
+		
+		return null;
 	}
 
-	//get todo by id 
+	//get MissingPerson by id 
 	
 	@Path("{id}")
 	@GET
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	public Todo getTodo(@PathParam("id")int id) {
+	public MissingPerson getMissingPerson(@PathParam("id")int id) {
 		System.out.println("Getting task by id:"+id);
-		return todos.get(id);
+		return MissingPersons.get(id);
 	}
 	
-	//create todo 
+	//create MissingPerson 
 	@POST
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	@Consumes({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	public Todo newTodo(Todo todo) {
-		todos.put(todo.getId(), todo);
-		return todo;
+	public MissingPerson newMissingPerson(MissingPerson MissingPerson) {
+		
+		return MissingPerson;
 	}
 	
-	//update todo
+	//update MissingPerson
 	@Path("{id}")
 	@PUT
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	@Consumes({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	public Todo updateTodo(Todo todo) {
-		System.out.println("updating todo with ID: " + todo.getId());
-		todos.remove(todo.getId());
-		todos.put(todo.getId(), todo);
-		todos.get(todo.getId()).setTask(todo.getTask());
-		return todo;
+	public MissingPerson updateMissingPerson(MissingPerson MissingPerson) {
+		return MissingPerson;
 	}
 	
 	
-	//delete todo
+	//delete MissingPerson
 	@Path("{id}")
 	@DELETE
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	public Todo deleteTodo(@PathParam("id") int id) {
-	  System.out.println("Deleting todo with ID: " + id);
+	public MissingPerson deleteMissingPerson(@PathParam("id") int id) {
+	  System.out.println("Deleting MissingPerson with ID: " + id);
 		
-	  Todo todo = todos.remove(id);
+	  MissingPerson MissingPerson = MissingPersons.remove(id);
 	  
-	  return todo;
+	  return MissingPerson;
 	}
 }
