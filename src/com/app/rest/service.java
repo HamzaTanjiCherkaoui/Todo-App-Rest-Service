@@ -7,15 +7,6 @@ import java.util.Map;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
-
-
-
-
-
-
-
-import model.Todo;
-
 import com.app.model.MissingPerson;
 import com.app.model.MissingPerson;
 import com.app.model.Photo;
