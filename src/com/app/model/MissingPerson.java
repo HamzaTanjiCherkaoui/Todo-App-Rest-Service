@@ -16,6 +16,10 @@ public class MissingPerson {
 
 	
 	
+	public MissingPerson() {
+		
+	}
+
 	public MissingPerson(String firstName, String lastName,
 			ArrayList<Photo> photos, ArrayList<Place> places, boolean status,
 			User user) {

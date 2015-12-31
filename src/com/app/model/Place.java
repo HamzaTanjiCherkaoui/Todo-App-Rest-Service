@@ -13,6 +13,9 @@ public class Place {
 	
 	
 	
+	public Place() {
+	
+	}
 	public Place(Double longitude, Double latitude, String address,
 			String timeStamp) {
 		super();

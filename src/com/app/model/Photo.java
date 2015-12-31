@@ -9,6 +9,10 @@ private String photoLink;
 
 
 
+public Photo() {
+
+}
+
 public Photo(String photoLink) {
 	super();
 	this.photoLink = photoLink;
