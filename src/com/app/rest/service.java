@@ -13,6 +13,9 @@ import javax.ws.rs.core.MediaType;
 
 
 
+
+import model.Todo;
+
 import com.app.model.MissingPerson;
 import com.app.model.MissingPerson;
 import com.app.model.Photo;
@@ -58,8 +61,8 @@ public class service {
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	public ArrayList<MissingPerson> getAllMissingPersons() {
 		System.out.println("Getting all tasks...");
-		
-		return null;
+		ArrayList<MissingPerson> mslist = new ArrayList<MissingPerson>(MissingPersons.values());
+		return mslist;
 	}
 
 	//get MissingPerson by id 
