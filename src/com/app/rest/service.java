@@ -38,7 +38,7 @@ public class service {
 		photos.add(ph);photos.add(ph2);photos.add(ph1);
 		
 		User u =new User("Test", "test","email@test.com", "123456","069292929");
-		MissingPerson ms = new MissingPerson("benaich", "hentai", photos, places, false, u);
+		MissingPerson ms = new MissingPerson("test", "test", photos, places, false, u);
 		
 		MissingPersons.put(1, ms);
 		MissingPersons.put(2, ms);
