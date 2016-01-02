@@ -20,7 +20,7 @@ public class service {
 	static Map<Integer, MissingPerson> MissingPersons  = new HashMap<Integer, MissingPerson>();
 	
 	static {
-		System.out.println("Initializing Internal DataStore/DB...");
+		System.out.println("simulating DB...");
 		
 		//DB transactions
 		Place p = new Place(24112.2, 24112.2, "address", "2015/21/12 05:34:32");
