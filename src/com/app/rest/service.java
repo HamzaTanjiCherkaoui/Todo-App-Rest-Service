@@ -49,7 +49,7 @@ public class service {
 	
 	//get all MissingPersons
 	@GET
-	@Produces({ MediaType.APPLICATION_JSON})
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	public ArrayList<MissingPerson> getAllMissingPersons() {
 		System.out.println("Getting all tasks...");
 		ArrayList<MissingPerson> mslist = new ArrayList<MissingPerson>(MissingPersons.values());
