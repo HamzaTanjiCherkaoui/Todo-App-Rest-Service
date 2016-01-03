@@ -19,7 +19,7 @@ public class Main2 extends HttpServlet {
      */
     public Main2() {
         super();
-        // TODO Auto-generated constructor stub
+       
     }
 
 	/**
