@@ -13,7 +13,7 @@ import com.app.model.Photo;
 import com.app.model.Place;
 import com.app.model.User;
 @Path("/missingpeoples")
-public class service {
+public class MissingPeopleservice {
 	static final String api_version = "1.01A rev.18729";
 	
 	static String xmlString = null;
@@ -49,7 +49,7 @@ public class service {
 	
 	//get all MissingPersons
 	@GET
-	@Produces({ MediaType.APPLICATION_JSON})
+	@Produces({ MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 	public ArrayList<MissingPerson> getAllMissingPersons() {
 		System.out.println("Getting all tasks...");
 		ArrayList<MissingPerson> mslist = new ArrayList<MissingPerson>(MissingPersons.values());
