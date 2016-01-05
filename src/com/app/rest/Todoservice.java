@@ -26,7 +26,6 @@ public class Todoservice {
 		//DB transactions
 		todos.put(12, new Todo(12,"tache 1",false));
 		todos.put(22, new Todo(22,"tache 2",false));
-		todos.put(24, new Todo(24,"tache 2",true));
 		todos.put(33, new Todo(33,"tache 3",false));
 		todos.put(21, new Todo(21,"tache 4",true));
 	}
