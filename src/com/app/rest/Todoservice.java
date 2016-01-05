@@ -71,6 +71,7 @@ public class Todoservice {
 		todos.remove(todo.getId());
 		todos.put(todo.getId(), todo);
 		todos.get(todo.getId()).setTask(todo.getTask());
+		todos.get(todo.getId()).setState(todo.isState());
 		return todo;
 	}
 	
