@@ -55,7 +55,9 @@ public class Todoservice {
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	@Consumes({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	public Todo newTodo(Todo todo) {
-		todos.put(todo.getId(), todo);
+		int id =(int)(Math.random() * 101);
+		
+		todos.put(id, todo);
 		return todo;
 	}
 	
