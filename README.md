@@ -1,17 +1,17 @@
 # Todo-App-Rest-Service
 a Todo list WebService Createed using JavaEE .
 
-# The used libraries : 
+## The used libraries : 
   - Jersey
   - Jackson
 
-# The used Tools : 
+## The used Tools : 
  - Eclipse 
  - maven
  - heroku
- - git
- 
- ## Running Locally
+ -  git
+
+## Running Locally
 
 Make sure you have Java and Maven installed.  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
 
